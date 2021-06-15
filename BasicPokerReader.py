@@ -53,7 +53,7 @@ heart, spade, club, diamond = 0,0,0,0
 #user_hand_final = user_hand.split()
 #table_cards_final = table_cards.split()
 
-print(l1)
+
 
 
 for i in l1:
@@ -95,7 +95,6 @@ for key, value in user_hand_dict.items():
 			elif key == "K":
 				king += 1
 			elif key == "A":
-				print("here")
 				ace += 1
 			if value == "H":
 				heart += 1
@@ -149,7 +148,7 @@ for key, value in user_hand_dict.items():
 
 total_num = one + 2*two + 3*three + 4*four + 5*five + 6*six +7* seven + 8*eight + 9*nine + 10*ten + 11*jack + 12*queen + 13*king + 14*ace
 
-print(ace)
+
 if heart == 5 or spade == 5 or club == 5 or diamond == 5:
 	if ten >= 1 and jack >= 1 and queen >= 1 and king >= 1 and ace >= 1:
 		print("You have a royal flush!")
@@ -164,5 +163,16 @@ if one == 3 or two == 3 or  three == 3 or  four == 3 or  five == 3 or  six == 3 
 		print("You have a full house!")
 	else:
 		print("You have three of a kind!")
+if total_num % 5 == 0:
+	print("You have a straight!")
 
 
+t = 0
+for key, value in user_hand_dict.items():
+	if len(user_hand_dict[key]) > 1:
+		t += 1
+
+if t == 2:
+	print("You have two pairs!")
+elif t == 1:
+	print("You have a pair!")
